@@ -8,7 +8,7 @@
   font-size: 1.5rem;
 }
 
-.ingredients-container {
+.ingredients-container{
   max-height: 8rem;
   margin: 1.5rem 0 1.5rem 0;
 }
@@ -60,11 +60,12 @@
     object-fit: cover;
     object-position: center;
   }
+
 }
 
 @media screen and (max-width: 1000px) {
   .ingredients-container {
-    max-height: 20rem;
+    max-width: 20rem;
   }
 
   .cocktail-image {

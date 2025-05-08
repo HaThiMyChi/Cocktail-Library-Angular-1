@@ -3,15 +3,17 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { Cocktail } from '../Cocktail';
 
+
 const httpOptions = {
   headers: new HttpHeaders({
-    'Content-Type': 'application/json',
+    'Content-type': 'application/json',
   }),
-};
+}
 
 @Injectable({
   providedIn: 'root',
 })
+
 export class CocktailServerService {
   private apiUrl = 'http://localhost:3000/cocktails';
 

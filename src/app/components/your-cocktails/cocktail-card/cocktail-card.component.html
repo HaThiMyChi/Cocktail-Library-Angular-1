@@ -1,43 +1,38 @@
-<div
-  class="container d-flex justify-content-center align-items-start flex-wrap"
->
+<div class="container d-flex justify-content-center align-items-start flex-wrap">
   <div class="card mb-3">
     <div class="row g-0">
       <div class="col-lg-4 img-container">
-        <img
-          src="{{ cocktail.image }}"
+        <img 
+          src="{{cocktail.image}}"
           class="img-fluid rounded-start cocktail-image"
-          alt="{{ cocktail.name }}"
-        />
+          alt="{{cocktail.name}}"/>
       </div>
       <div class="col-lg-8">
         <div class="card-body">
-          <h5 class="card-title">{{ cocktail.name }}</h5>
+          <h5 class="card-title">{{cocktail.name}}</h5>
 
           <div class="badge mb-3" *ngIf="cocktail.alcohol; else elseBlock">
             Alcoholic
           </div>
-          <ng-template #elseBlock
-            ><div class="badge mb-3">Non-alcoholic</div></ng-template
-          >
+          <ng-template #elseBlock>
+            <div class="badge mb-3">Non-alcoholic</div>
+          </ng-template>
 
           <p class="card-text">
-            <small class="text-muted">by {{ cocktail.author }}</small>
+            <small class="text-muted">by {{cocktail.author}}</small>
           </p>
           <span class=""></span>
 
-          <div
-            class="container-fluid d-flex flex-column justify-content-start align-items-start flex-wrap ingredients-container"
-          >
+          <div class="container-fluid d-flex flex-column justify-content-start align-items-start flex-wrap ingredients-container">
             <div *ngFor="let ingredient of cocktail.ingredients">
               <div class="cocktail-ingredient">
-                {{ ingredient }}
+                {{ingredient}}
               </div>
             </div>
           </div>
 
           <p class="card-text">
-            {{ cocktail.description }}
+            {{cocktail.description}}
           </p>
 
           <button class="btn btn-light btn-edit" (click)="onEdit()">

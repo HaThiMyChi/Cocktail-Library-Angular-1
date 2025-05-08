@@ -21,7 +21,6 @@
   width: 18rem;
 }
 
-textarea:focus,
 input:focus {
   outline: none;
   border-bottom: 2px solid #fa4616;
@@ -43,7 +42,6 @@ input[type="search"]::-webkit-search-results-decoration {
 }
 
 /* Filter buttons */
-
 .btn-filter {
   background-color: white;
   color: #fa4616;
@@ -60,3 +58,4 @@ input[type="search"]::-webkit-search-results-decoration {
   border-color: #fa4616;
   box-shadow: 0 0 0 0.2rem rgba(250, 70, 22, 0.25);
 }
+

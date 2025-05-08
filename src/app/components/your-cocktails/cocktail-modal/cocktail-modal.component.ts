@@ -22,31 +22,5 @@ export class CocktailModalComponent implements OnInit {
 
   ngOnInit(): void {}
 
-  addTag(e: any) {
-    if (e.key == 'Enter') {
-      let tag: string = e.target.value.replace(/\s+/g, ' ');
-      if (tag.length > 1 && !this.clonedCocktail.ingredients.includes(tag))
-        tag.split(',').forEach((tag) => {
-          this.clonedCocktail.ingredients.push(tag);
-          console.log(this.clonedCocktail.ingredients);
-        });
-    } else return;
-    e.target.value = '';
-  }
-
-  remove(tag: string) {
-    let index = this.clonedCocktail.ingredients.indexOf(tag);
-    this.clonedCocktail.ingredients = [
-      ...this.clonedCocktail.ingredients.slice(0, index),
-      ...this.clonedCocktail.ingredients.slice(index + 1),
-    ];
-    console.log(this.clonedCocktail.ingredients);
-  }
-
-  removeAll() {
-    this.clonedCocktail.ingredients.length = 0;
-    const ingredientTags = document.querySelectorAll('.ingredient-tags');
-    ingredientTags.forEach((ingredientTags) => ingredientTags.remove());
-    console.log(this.clonedCocktail.ingredients);
-  }
+  
 }

@@ -1,21 +1,21 @@
 .container-fluid {
-  background-color: white;
-  color: rgb(45, 45, 45);
-  height: 100vh;
+    background-color: white;
+    color: rgb(45, 45, 45);
+    height: 100vh;
 }
 
 h1 {
-  font-weight: bold;
-  font-size: 12rem;
-  color: #fa4616;
+    font-weight: bold;
+    font-size: 12rem;
+    color: #fa4616
 }
 
 .btn-light {
-  background-color: #fa4616;
-  color: white;
+    background-color: #fa4616;
+    color: white;
 }
 
 a {
-  text-decoration: none;
-  color: white;
+    text-decoration: none;
+    color: white;
 }

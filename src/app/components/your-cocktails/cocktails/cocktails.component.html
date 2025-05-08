@@ -1,57 +1,52 @@
 <section class="cocktails-header text-center">
-  <h2 class="header-title">FIND YOUR PERFECT COCKTAIL</h2>
-  <p class="header-text">
-    Sweet, sour, bubbly or creamy - search for the perfect cocktail to match
-    your mood
-  </p>
+    <h2 class="header-title">FIND YOUR PERFECT COCKTAIL</h2>
+    <p class="header-text">
+        Sweet, sour, bubbly or creamy - search for the perfect cocktail to match
+        your mood
+    </p>
 </section>
 
 <div class="container text-center mt-5 mb-4">
-  <input
-    type="search"
-    class="search-bar"
-    name="name"
-    placeholder="Enter cocktail name to search"
-    [(ngModel)]="name"
-    (ngModelChange)="search()"
-  />
-  <button type="button" class="btn btn-light search-button">
-    <fa-icon [icon]="faMagnifyingGlass"></fa-icon>
-  </button>
+    <input 
+        type="search"
+        class="search-bar"
+        name="name"
+        placeholder="Enter cocktail name to search"
+    />
+    <button type="button" class="btn btn-light search-button">
+        <fa-icon [icon]="faMagnifyingGlass"></fa-icon>
+    </button>
 </div>
 
 <!-- Filter section with buttons: -->
-
 <div class="container d-flex justify-content-center text-center mb-4">
-  <button
-    class="btn btn-light btn-filter active me-3"
-    [class.active]="filter == 'all'"
-    (click)="filter = 'all'"
-    (click)="filterCocktails()"
-  >
-    All Cocktails
-  </button>
-  <button
-    class="btn btn-light btn-filter"
-    [class.active]="filter == 'alcohol'"
-    (click)="filter = 'alcohol'"
-    (click)="filterCocktails()"
-  >
-    Alcoholic Cocktails
-  </button>
-  <button
-    class="btn btn-light btn-filter ms-3"
-    [class.active]="filter == 'noAlcohol'"
-    (click)="filter = 'noAlcohol'"
-    (click)="filterCocktails()"
-  >
-    Non-alcoholic Cocktails
-  </button>
+    <button
+        class="btn btn-light btn-filter active me-3"
+        [class.active]="filter == 'all'"
+        (click)="filter = 'all'"
+        (click)="filterCocktails()"
+    >
+        All Cocktails
+    </button>
+    <button
+        class="btn btn-light btn-filter"
+        [class.active]="filter == 'alcohol'"
+        (click)="filter = 'alcohol'"
+        (click)="filterCocktails()"
+        >
+        Alcoholic Cocktails
+    </button>
+    <button
+        class="btn btn-light btn-filter ms-3"
+        [class.active]="filter == 'noAlcohol'"
+        (click)="filter = 'noAlcohol'"
+        (click)="filterCocktails()"
+    >
+        Non-alcoholic Cocktails
+    </button>
 </div>
 
-<app-cocktail-card
-  *ngFor="let cocktail of cocktails"
-  [cocktail]="cocktail"
-  (onDeleteCocktail)="deleteCocktail(cocktail)"
-  (edit)="showEditCocktail($event)"
-></app-cocktail-card>
+<app-cocktail-card *ngFor="let cocktail of cocktails"
+    [cocktail]="cocktail"
+    (onDeleteCocktail)="deleteCocktail(cocktail)">
+</app-cocktail-card>

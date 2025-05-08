@@ -1,190 +1,160 @@
-<div
-  class="container-fluid vh-container d-flex justify-content-center align-items-center"
+<div 
+    class="container-fluid vh-container d-flex justify-content-center align-items-center"
 >
-  <main class="container">
-    <div
-      class="container-flex d-flex justify-content-center align-items-start flex-wrap"
-    >
-      <div class="card mb-3 form-container">
-        <div class="row g-0">
-          <div class="col-lg-4">
-            <img
-              src="../../../assets/images/watermelon-margarita.jpg"
-              class="img-fluid rounded-start cocktail-image"
-              alt="Watermelon Margarita Cocktail"
-            />
-          </div>
-          <div class="col-md-8">
-            <div class="card-body">
-              <h5 class="card-title">Add your cocktail</h5>
-
-              <p class="card-text">
-                Add cocktails into your library and have them at hand anywhere
-                you go!
-              </p>
-
-              <!-- Add a Cocktail Form -->
-              <form>
-                <div class="container m-6 p-6">
-                  <div class="container mt-4">
-                    <label for="cocktailName" class="form-label"
-                      >Cocktail Name</label
-                    >
-                    <div class="input-group mb-3">
-                      <input
-                        type="text"
-                        class="form-control"
-                        aria-label="Edit Cocktail Name"
-                        aria-describedby="basic-addon1"
-                        id="cocktailName"
-                        name="name"
-                        required
-                        [(ngModel)]="name"
-                      />
+    <main class="container">
+        <div class="container-flex d-flex justify-content-center align-items-start flex-wrap">
+            <div class="card mb-3 form-container">
+                <div class="row g-0">
+                    <div class="col-lg-4">
+                        <img 
+                            src="../../../assets/images/watermelon-margarita.jpg" 
+                            alt="Watermelon Margarita Cocktail"
+                            class="img-fluid rounded-start cocktail-image"
+                        />
                     </div>
-                  </div>
+                    <div class="col-md-8">
+                        <div class="card-body">
+                            <h5 class="card-title">Add our cocktail</h5>
+                            <p class="card-text">
+                                Add cocktails into your library and have them at hand anywhere you go!
+                            </p>
 
-                  <div class="container mt-4">
-                    <label for="cocktailAuthor" class="form-label"
-                      >Cocktail Author</label
-                    >
-                    <div class="input-group mb-3">
-                      <input
-                        type="text"
-                        class="form-control"
-                        aria-label="Edit Cocktail Author"
-                        aria-describedby="basic-addon1"
-                        id="cocktailAuthor"
-                        name="author"
-                        [(ngModel)]="author"
-                      />
-                    </div>
-                  </div>
+                            <!-- Add a Cocktail Form -->
+                             <form>
+                                <div class="container m-6 p-6">
+                                    <div class="container mt-4">
+                                        <label for="cocktailName" class="form-label">
+                                            Cocktail Name
+                                        </label>
+                                        <div class="input-group mb-3">
+                                            <input 
+                                                type="text"
+                                                class="form-control"
+                                                aria-label="Edit Cocktail Name"
+                                                aria-describedby="basic-addon1"
+                                                id="cocktailName"
+                                                name="name"
+                                                required
+                                                [(ngModel)]="name"
+                                               
+                                            />
+                                        </div>
+                                    </div>
 
-                  <div class="container mt-4 mb-2">
-                    <label for="cocktailAlcohol" class="form-label"
-                      >Type of Cocktail:
-                    </label>
-                    <div
-                      class="form-check form-check-inline ms-3"
-                      id="cocktailAlcohol"
-                    >
-                      <input
-                        class="form-check-input custom-control-input"
-                        type="radio"
-                        name="alcohol"
-                        id="inlineRadio1"
-                        value="option1"
-                        [(ngModel)]="alcohol"
-                        [value]="true"
-                      />
-                      <label
-                        class="form-check-label custom-control-label"
-                        for="inlineRadio1"
-                        >Alcoholic</label
-                      >
-                    </div>
-                    <div class="form-check form-check-inline ms-1">
-                      <input
-                        class="form-check-input custom-control-input"
-                        type="radio"
-                        name="alcohol"
-                        id="inlineRadio2"
-                        value="option2"
-                        [(ngModel)]="alcohol"
-                        [value]="false"
-                      />
-                      <label
-                        class="form-check-label custom-control-label"
-                        for="inlineRadio2"
-                        >Non-alcoholic</label
-                      >
-                    </div>
-                  </div>
+                                    <div class="container mt-4">
+                                        <label for="cocktailAuthor" class="form-label">Cocktail Author</label>
+                                        <div class="input-group mb-3">
+                                            <input type="text" class="form-control" aria-label="Edit Cocktail Author"
+                                            aria-describedby="basic-addon1" id="cocktailAuthor" name="author" [(ngModel)]="author" >
+                                        </div>
+                                    </div>
 
-                  <!-- Tags imput html -->
+                                    <div class="container mt-4 mb-2">
+                                        <label for="cocktailAlcohol" class="form-label">Type of Cocktail:</label>
+                                        <div class="form-check form-check-inline ms-3" id="Type of Cocktail:">
+                                            <input 
+                                                class="form-check-input custom-control-input"
+                                                type="radio"
+                                                name="alcohol"
+                                                id="inlineRadio1"
+                                                value="option1"
+                                                [(ngModel)]="alcohol"
+                                                [value]="true"
 
-                  <div class="wrapper">
-                    <div class="content">
-                      <p class="ingredients-label">
-                        Ingredients - press enter after each ingredient
-                      </p>
+                                            />
+                                            <label
+                                                class="form-check-label custom-control-label"
+                                                for="inlineRadio1"
+                                                >Alcoholic
+                                            </label>
+                                        </div>
 
-                      <ul class="input-window">
-                        <div class="tag-list" *ngFor="let tag of ingredients">
-                          <li class="ingredient-tags">
-                            {{ tag
-                            }}<fa-icon
-                              [icon]="faXmark"
-                              (click)="remove(tag)"
-                            ></fa-icon>
-                          </li>
+                                        <div class="form-check form-check-inline ms-1">
+                                            <input
+                                              class="form-check-input custom-control-input"
+                                              type="radio"
+                                              name="alcohol"
+                                              id="inlineRadio2"
+                                              value="option2"
+                                              [(ngModel)]="alcohol"
+                                              [value]="false"
+                                            />
+                                            <label
+                                              class="form-check-label custom-control-label"
+                                              for="inlineRadio2"
+                                              >Non-alcoholic</label
+                                            >
+                                        </div>
+                                    </div>
+
+                                    <!-- Tags imput html -->
+                                    <div class="wrapper">
+                                        <div class="content">
+                                            <p class="ingredients-label">
+                                                Ingredients - press enter after each ingredient
+                                            </p>
+
+                                            <ul class="input-window">
+                                                <div class="tag-list" *ngFor="let tag of ingredients">
+                                                    <li class="ingredient-tags">
+                                                        {{tag}}
+                                                        <fa-icon [icon]="faXmark" (click)="remove(tag)"></fa-icon>
+                                                    </li>
+                                                </div>
+                                                <input type="text"  (keyup)="addTag($event)"/>
+                                            </ul>
+
+                                            <div class="details">
+                                                <button 
+                                                    type="button"
+                                                    class="btn btn-light btn-remove-ingredients"
+                                                    (click)="removeAll()"
+                                                >Remove all</button>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <!-- Tags imput html -->
+                                    <div class="container mt-4">
+                                        <label for="cocktailDescription" class="form-label">Cocktail Description</label>
+                                        <div class="input-group">
+                                            <textarea  
+                                                class="form-control" 
+                                                aria-label="Edit Cocktail Description"
+                                                id="cocktailDescription"
+                                                required
+                                                style="height: 100px"
+                                                name="description"
+                                                [(ngModel)]="description">
+                                            </textarea>
+                                        </div>
+                                    </div>
+
+                                    <div class="container mt-4">
+                                        <label for="cocktailImage" class="form-label">
+                                            Cocktail Image Link
+                                        </label>
+                                        <div class="input-group mb-3">
+                                            <input 
+                                                type="text"
+                                                class="form-control"
+                                                aria-label="Edit Cocktail Image"
+                                                aria-describedby="basic-addon1"
+                                                id="cocktailImage"
+                                                required
+                                                name="image"
+                                                [(ngModel)]="image"
+                                            />
+                                        </div>
+                                    </div>
+
+                                    <button type="button" class="btn btn-light btn-save" (click)="onSubmit()">Save</button>
+                                </div>
+                             </form>
                         </div>
-                        <input type="text" (keyup)="addTag($event)" />
-                      </ul>
-
-                      <div class="details">
-                        <button
-                          type="button"
-                          class="btn btn-light btn-remove-ingredients"
-                          (click)="removeAll()"
-                        >
-                          Remove all
-                        </button>
-                      </div>
                     </div>
-                  </div>
-
-                  <!-- Tags imput html -->
-
-                  <div class="container mt-4">
-                    <label for="cocktailDescription" class="form-label"
-                      >Cocktail Description</label
-                    >
-                    <div class="input-group">
-                      <textarea
-                        class="form-control"
-                        aria-label="Edit Cocktail Description"
-                        id="cocktailDescription"
-                        required
-                        style="height: 100px"
-                        name="description"
-                        [(ngModel)]="description"
-                      ></textarea>
-                    </div>
-                  </div>
-
-                  <div class="container mt-4">
-                    <label for="cocktailImage" class="form-label"
-                      >Cocktail Image Link</label
-                    >
-                    <div class="input-group mb-3">
-                      <input
-                        type="text"
-                        class="form-control"
-                        aria-label="Edit Cocktail Image"
-                        aria-describedby="basic-addon1"
-                        id="cocktailImage"
-                        required
-                        name="image"
-                        [(ngModel)]="image"
-                      />
-                    </div>
-                  </div>
-
-                  <button
-                    type="button"
-                    class="btn btn-light btn-save"
-                    (click)="onSubmit()"
-                  >
-                    Save
-                  </button>
                 </div>
-              </form>
             </div>
-          </div>
         </div>
-      </div>
-    </div>
-  </main>
+    </main>
 </div>

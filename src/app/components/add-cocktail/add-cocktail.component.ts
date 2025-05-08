@@ -9,6 +9,7 @@ import { CocktailServerService } from 'src/app/services/cocktail-server.service'
   styleUrls: ['./add-cocktail.component.css'],
 })
 export class AddCocktailComponent implements OnInit {
+  
   faXmark = faXmark;
   name!: string;
   author!: string;
@@ -23,6 +24,20 @@ export class AddCocktailComponent implements OnInit {
     console.log('init');
   }
 
+  addTag(e: any) {
+    console.log(e);
+    if (e.key == 'Enter') {
+      let tag: string = e.target.value.replace(/\s+/g, ' ');
+      if (tag.length > 1 && !this.ingredients.includes(tag)) {
+        tag.split(',').forEach((tag) => {
+          this.ingredients.push(tag);
+        });
+      }
+
+    } else return;
+    e.target.value = '';
+  }
+
   onSubmit() {
     const newCocktail = {
       name: this.name,
@@ -30,31 +45,17 @@ export class AddCocktailComponent implements OnInit {
       ingredients: this.ingredients,
       description: this.description,
       image: this.image,
-      alcohol: this.alcohol,
+      alcohol: this.alcohol
     };
-
     this.cocktailServer.addCocktail(newCocktail).subscribe();
-
     console.log(newCocktail);
 
-    this.name = '';
+    this.name = ''
     this.author = '';
     this.ingredients = [];
     this.description = '';
     this.image = '';
     this.alcohol = true;
-  }
-
-  addTag(e: any) {
-    if (e.key == 'Enter') {
-      let tag: string = e.target.value.replace(/\s+/g, ' ');
-      if (tag.length > 1 && !this.ingredients.includes(tag))
-        tag.split(',').forEach((tag) => {
-          this.ingredients.push(tag);
-          console.log(this.ingredients);
-        });
-    } else return;
-    e.target.value = '';
   }
 
   remove(tag: string) {
@@ -70,6 +71,5 @@ export class AddCocktailComponent implements OnInit {
     this.ingredients.length = 0;
     const ingredientTags = document.querySelectorAll('.ingredient-tags');
     ingredientTags.forEach((ingredientTags) => ingredientTags.remove());
-    console.log(this.ingredients);
   }
 }

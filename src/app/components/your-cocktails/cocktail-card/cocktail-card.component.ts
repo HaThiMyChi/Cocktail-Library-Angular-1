@@ -22,4 +22,5 @@ export class CocktailCardComponent implements OnInit {
   onEdit() {
     this.edit.emit(this.cocktail);
   }
+
 }

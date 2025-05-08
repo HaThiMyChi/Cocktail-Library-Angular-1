@@ -1,121 +1,103 @@
 .vh-container {
-  background-color: #fa4616;
-  height: 100vh;
+    background-color: #fa4616;
+    height: 100vh;
 }
 
 .cocktail-image {
-  width: 100%;
-  height: 830px;
-  object-fit: cover;
-  object-position: center;
+    width: 100%;
+    height: 830px;
+    object-fit: cover;
+    object-position: center;
 }
-
 .cocktail-ingredient {
-  padding: 0.3rem 0.5rem 0.3rem 1rem;
-  border-left: 1px solid;
+    padding: 0.3rem 0.5rem 0.3rem 1rem;
+    border-left: 1px solid;
 }
 
 .card-title {
-  padding: 0.6rem 0.5rem 0.25rem 0;
-  font-size: 1.5rem;
-}
-
-.btn-save {
-  background-color: #fa4616;
-  color: white;
-  border: none;
-}
-
-.btn-save:focus {
-  border-color: #fa4616;
-  box-shadow: 0 0 0 0.2rem rgba(250, 70, 22, 0.25);
-}
-
-.card-title {
-  font-size: 2rem;
+    padding: 0.6rem 0.5rem 0.25rem 0;
+    font-size: 2rem;
 }
 
 .form-control:focus {
-  border-color: #fa4616;
-  box-shadow: 0 0 0 0.2rem rgba(250, 70, 22, 0.25);
+    border-color: #fa4616;
+    box-shadow: 0 0 0 0.2rem rgba(250, 70, 22, 0.25);
 }
 
-/* Tag imput css */
+.btn-save {
+    background-color: #fa4616;
+    color: white;
+    border: none;
+}
+
+.btn-save:focus {
+    border-color: #fa4616;
+    box-shadow: 0 0 0 0.2rem rgba(250, 70, 22, 0.25);
+}
 
 .wrapper :where(li, li, fa-icon) {
-  display: flex;
-  align-items: center;
+    display: flex;
+    align-items: center;
 }
 
 .ingredients-label {
-  font-size: 1.03rem;
+    font-size: 1.03rem;
 }
 
 .input-window {
-  display: flex;
-  flex-wrap: wrap;
-  margin: 12px 0;
-  padding: 0.5rem;
-  border: 1px solid #bcbcbc;
-  border-radius: 3px;
+    display: flex;
+    flex-wrap: wrap;
+    margin: 12px 0;
+    padding: 0.5rem;
+    border: 1px solid #bcbcbc;
+    border-radius: 3px;
 }
 
 .ingredient-tags {
-  list-style: none;
-  margin: 0.2rem;
-  padding: 0.2rem;
-  border-radius: 3px;
-  background: #fdcabb;
-  border: 1px solid #fcb6a0;
-}
-
-.content ul li fa-icon {
-  height: 20px;
-  width: 20px;
-  cursor: pointer;
-  color: #393939;
-  font-size: 12px;
-  margin-left: 8px;
-  border-radius: 50%;
-  background-color: #fba78e;
-  justify-content: center;
+    margin: 0.2rem;
+    list-style: none;
+    padding: 0.2rem;
+    border-radius: 3px;
+    background: #facabb;
+    border: 1px solid #fcb6a0;
 }
 
 .content ul input {
-  flex: 1;
-  outline: none;
-  border: none;
-  padding: 5px;
+    flex: 1;
+    outline: none;
+    border: none;
+    padding: 5px;
 }
 
 .btn-remove-ingredients {
-  background-color: #fa4616;
-  color: white;
-  border: none;
-  margin-top: 0.35rem;
+    background-color: #fa4616;
+    color: white;
+    border: none;
+    margin-top: 0.35rem;
 }
 
 .btn-remove-ingredients:focus {
-  box-shadow: 0 0 0 0.2rem rgba(250, 70, 22, 0.25);
+    box-shadow: 0 0 0 0.2rem rgba(250, 70, 22, 0.25);
 }
 
 @media screen and (max-width: 1200px) {
-  .cocktail-image {
-    height: 100%;
-    object-fit: cover;
-    object-position: center;
-  }
+    .cocktail-image {
+        height: 100%;
+        object-fit: cover;
+        object-position: center;
+    }
+    
 }
 
-@media screen and (max-width: 1000px) {
-  .cocktail-image {
-    width: 100%;
-    height: 200px;
-    object-fit: cover;
-    object-position: center;
-  }
+@media  screen and (max-width: 1000px) {
+    .cocktail-image {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        object-position: center;
+    }
 
-  .form-container {
-    margin-top: 250px;
-  }
+    .form-container {
+        margin-top: 250px;
+    }
 }
