@@ -12,6 +12,8 @@
         class="search-bar"
         name="name"
         placeholder="Enter cocktail name to search"
+        [(ngModel)]="name"
+        (ngModelChange)="search()"
     />
     <button type="button" class="btn btn-light search-button">
         <fa-icon [icon]="faMagnifyingGlass"></fa-icon>
@@ -48,5 +50,6 @@
 
 <app-cocktail-card *ngFor="let cocktail of cocktails"
     [cocktail]="cocktail"
-    (onDeleteCocktail)="deleteCocktail(cocktail)">
+    (onDeleteCocktail)="deleteCocktail(cocktail)"
+    (edit)="showEditCocktail($event)">
 </app-cocktail-card>

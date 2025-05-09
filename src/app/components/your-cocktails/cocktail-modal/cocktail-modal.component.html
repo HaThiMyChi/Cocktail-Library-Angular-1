@@ -1,0 +1,160 @@
+<div class="modal-header">
+    <button 
+        type="button"
+        class="btn-close"
+        aria-label="Close"
+        (click)="activeModal.dismiss(null)"
+    >
+    </button>
+</div>
+<div class="modal-body">
+    <div class="container">
+        <form class="add-post-form" id="cocktailForm">
+            <h3>Edit Cocktail</h3>
+            <div class="container mt-4">
+                <label for="cocktailName" class="form-label">Edit Cocktail Name</label>
+                <div class="input-group mb-3">
+                    <input 
+                        type="text"
+                        class="form-control"
+                        aria-label="Edit Cocktail Name"
+                        aria-describedby="basic-addon1"
+                        id="cocktailName"
+                        name="name"
+                        required
+                        [(ngModel)]="clonedCocktail.name"
+                    />
+                </div>
+            </div>
+
+            <div class="container mt-4">
+                <label for="cocktailAuthor" class="form-label">Edit Cocktail Author</label>
+                <div class="input-group mb-3">
+                    <input 
+                        type="text"
+                        class="form-control"
+                        aria-label="Edit Cocktail Author"
+                        aria-describedby="basic-addon1"
+                        id="cocktailAuthor"
+                        name="author"
+                        [(ngModel)]="clonedCocktail.author"
+                    />
+                </div>
+            </div>
+
+            <div class="container mt-4 mb-2">
+                <label for="cocktailAlcohol" class="form-label">Type of Cocktail:</label>
+                <div class="form-check form-check-inline ms-3" id="cocktailAlcohol">
+                    <input 
+                        class="form-check-input custom-control-input"
+                        type="radio"
+                        name="alcohol"
+                        id="inlineRadio1"
+                        value="Option1"
+                        [value]="true"
+                        [(ngModel)]="clonedCocktail.alcohol"
+                    />
+                    <label for="inlineRadio1" class="form-check-label custom-control-labe">Alcoholic</label>
+                </div>
+                <div class="form-check form-check-inline ms-1">
+                    <input 
+                        class="form-check-input custom-control-input"
+                        type="radio"
+                        name="alcohol"
+                        id="inlineRadio2"
+                        value="option2"
+                        [value]="false"
+                        [(ngModel)]="clonedCocktail.alcohol"
+                    />
+                    <label class="form-check-label custom-control-label" for="inlineRadio2">
+                        Non-alcoholic
+                    </label>
+                </div>
+            </div>
+
+            <!-- Tag input html -->
+            <div class="container mt-4">
+                <div class="wrapper">
+                    <div class="content">
+                        <p>Edit ingredients - press enter after each ingredient</p>
+                        
+                        <ul class="input-window">
+                            <div class="tag-list" *ngFor="let tag of clonedCocktail.ingredients">
+                                <li class="ingredient-tags" name="ingredients" ngDefaultControl [(ngModel)]="clonedCocktail.ingredients">
+                                    {{tag}}
+                                    <fa-icon [icon]="faXmark" (click)="remove(tag)"></fa-icon>
+                                </li>
+                            </div>
+                            <input 
+                                type="text" 
+                                aria-label="Edit Cocktail Ingredients"
+                                id="cocktailIngredients"
+                                required
+                                (keyup)="addTag($event)"
+                            />
+                        </ul>
+
+                        <div class="details">
+                            <button
+                                type="button"
+                                class="btn btn-light btn-remove-ingredients"
+                                (click)="removeAll()">
+                                Remove All
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Tag input html -->
+
+            <div class="container mt-4">
+                <label for="cocktailDescription" class="form-label">
+                    Edit Cocktail Description
+                </label>
+                <div class="input-group">
+                    <textarea 
+                        class="form-control"
+                        aria-label="Edit Cocktail Description"
+                        name="description" 
+                        id="cocktailDescription"
+                        required
+                        style="height: 150px;"
+                        [(ngModel)]="clonedCocktail.description"
+                    >
+                    </textarea>
+                </div>
+            </div>
+            
+            <div class="container-mt-4">
+                <label for="cocktailImage" class="form-label">
+                    Edit Cocktail Image Link
+                </label>
+                <div class="input-group mb-3">
+                    <input 
+                        type="text" 
+                        class="form-control"
+                        aria-label="Edit Cocktail Image"
+                        aria-describedby="basic-addon1"
+                        id="cocktailImage"
+                        required
+                        name="image"
+                        [(ngModel)]="clonedCocktail.image"
+                    />
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
+<div class="modal-footer">
+    <button
+        type="button"
+        class="btn btn-outline-dark btn-cancel"
+        (click)="activeModal.dismiss(null)"
+    >
+        Cancel
+    </button>
+    <button type="button" class="btn btn-light btn-save" (click)="activeModal.close(clonedCocktail)">
+        Save
+    </button>
+</div>

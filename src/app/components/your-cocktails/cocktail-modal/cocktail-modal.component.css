@@ -26,16 +26,10 @@
   box-shadow: 0 0 0 0.2rem rgba(250, 70, 22, 0.25);
 }
 
-.form-control:focus {
-  border-color: #fa4616;
-  box-shadow: 0 0 0 0.2rem rgba(250, 70, 22, 0.25);
-}
-
-/* Tag imput css */
-
+/* Tag input css */
 .wrapper :where(li, li, fa-icon) {
   display: flex;
-  align-items: center;
+  align-items: center;;
 }
 
 .input-window {
@@ -84,3 +78,4 @@
 .btn-remove-ingredients:focus {
   box-shadow: 0 0 0 0.2rem rgba(250, 70, 22, 0.25);
 }
+

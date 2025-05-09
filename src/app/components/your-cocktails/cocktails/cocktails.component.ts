@@ -49,4 +49,40 @@ export class CocktailsComponent implements OnInit {
         );
       }
   }
+
+  search() {
+    if (this.name == '') {
+      this.ngOnInit();
+    } else {
+      this.cocktails = this.cocktails.filter((res) => {
+        return res.name.toLocaleLowerCase().match(this.name.toLocaleLowerCase());
+      });
+    }
+  }
+
+  showEditCocktail(cocktail: Cocktail) {
+    const modalRef = this.modalService.open(CocktailModalComponent);
+    modalRef.componentInstance.clonedCocktail = {
+      ...cocktail,
+    };
+
+    modalRef.closed.pipe(
+      switchMap((updatedCocktail) => {
+        return this.cocktailServerService.updateCocktail(updatedCocktail);
+      }),
+      tap((updatedCocktail) => {
+        this.cocktails = this.cocktails.map((c) => {
+          if (c.id === updatedCocktail.id) {
+            return updatedCocktail;
+          }
+          return c;
+        })
+      }),
+      catchError((err) => {
+        alert(err);
+        return NEVER;
+      })
+    )
+    .subscribe();
+  }
 }
